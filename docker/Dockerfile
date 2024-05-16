@@ -3,7 +3,6 @@ FROM openjdk:17
 COPY target/*.jar /app/
 
 WORKDIR /app
-<<<<<<< HEAD
 
 EXPOSE 6050
 
@@ -26,14 +25,6 @@ ENTRYPOINT ["java", "-jar", "SpringbootMysqlproject-0.0.1-SNAPSHOT.jar"]
 #ENTRYPOINT exec java -jar app.jar
 
 
-
-=======
-
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "SpringbootMysqlproject-0.0.1-SNAPSHOT.jar"]
-
-
 # FROM openjdk
 
 # COPY target/*.jar /
@@ -41,4 +32,4 @@ ENTRYPOINT ["java", "-jar", "SpringbootMysqlproject-0.0.1-SNAPSHOT.jar"]
 # EXPOSE 8080 
 
 # ENTRYPOINT ["java","-jar","/SpringbootMysqlproject-0.0.1-SNAPSHOT.jar"]
->>>>>>> 7fbb4936cfe3b5a9e2212a0d6866c57295419624
+
