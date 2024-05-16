@@ -1,11 +1,28 @@
-FROM openjdk:8u151-jdk-alpine3.7
+FROM openjdk:17
 
-EXPOSE 8070 
+COPY target/*.jar /app/
 
-ENV APP_HOME /app
+WORKDIR /app
 
-COPY target/SpringbootMysqlproject-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
+EXPOSE 6050
 
-WORKDIR $APP_HOME
+ENTRYPOINT ["java", "-jar", "SpringbootMysqlproject-0.0.1-SNAPSHOT.jar"]
 
-ENTRYPOINT exec java -jar app.jar
+
+
+
+
+#FROM openjdk:8u151-jdk-alpine3.7
+
+#EXPOSE 8070 
+
+#ENV APP_HOME /app
+
+#COPY target/SpringbootMysqlproject-0.0.1-SNAPSHOT.jar $APP_HOME/app.jar
+
+#WORKDIR $APP_HOME
+
+#ENTRYPOINT exec java -jar app.jar
+
+
+

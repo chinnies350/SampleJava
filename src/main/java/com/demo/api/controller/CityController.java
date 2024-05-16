@@ -27,7 +27,7 @@ import com.demo.api.ListTypeValues;
 import com.demo.api.PostStudentResult;
 import com.demo.api.State;
 import com.demo.api.message.CityResponseEntity;
-import com.demo.api.publisher.RabbitMqJsonProducer;
+//import com.demo.api.publisher.RabbitMqJsonProducer;
 import com.demo.api.repository.CityRepository;
 import com.demo.api.service.CityService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,8 +54,8 @@ public class CityController {
 	@Autowired
     private CityRepository cityRepository;
 	
-	@Autowired
-	private RabbitMqJsonProducer rabbitMqJsonProducer;
+//	@Autowired
+//	private RabbitMqJsonProducer rabbitMqJsonProducer;
 	
 	private static final Logger logger = LoggerFactory.getLogger(CityController.class);
 	
@@ -82,7 +82,7 @@ public class CityController {
 	    	List<City> cityList = cityservice.getCityData(null, null, null,null,null);
 	        if (!cityList.isEmpty()) {
 	            // Send cities to RabbitMQ
-	            rabbitMqJsonProducer.sendCities(cityList);
+//	            rabbitMqJsonProducer.sendCities(cityList);
 
 	            // Convert cityList to JSON format
 	            ArrayNode cityArrayNode = objectMapper.createArrayNode();
